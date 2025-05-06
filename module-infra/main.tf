@@ -49,13 +49,13 @@ resource "aws_instance" "tool" {
   }
 }
 
-resource "aws_route53_record" "private" {
-  name    = "${var.name}-private"
-  type    = "A"
-  ttl     = 10
-  zone_id = var.zone_id
-  records = [aws_instance.tool.private_ip]
-}
+# resource "aws_route53_record" "private" {
+#   name    = "${var.name}-private"
+#   type    = "A"
+#   ttl     = 10
+#   zone_id = var.zone_id
+#   records = [aws_instance.tool.private_ip]
+# }
 
 resource "aws_route53_record" "public" {
   name    = "${var.name}-public"
