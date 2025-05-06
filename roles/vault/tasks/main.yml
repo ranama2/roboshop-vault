@@ -1,0 +1,14 @@
+
+
+- name: Setup prompt
+  ansible.builtin.shell: set-prompt {{ tool_name }}
+
+- name: Download repo file
+  ansible.builtin.get_url:
+    url: https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
+    dest: /etc/yum.repos.d/hashicorp.repo
+
+- name: Install Vault
+  ansible.builtin.dnf:
+    name: vault
+    state: installed
