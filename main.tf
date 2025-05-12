@@ -14,7 +14,7 @@ variable "tools" {
   default = {
     vault = {
       instance_type = "t2.micro"
-      port          = 8200
+      ports          = 8200
     }
   }
 }
