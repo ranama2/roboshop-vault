@@ -31,7 +31,7 @@ resource "aws_vpc_security_group_ingress_rule" "vault_port" {
   from_port         = 8200
   ip_protocol       = "tcp"
   to_port           = 8200
-  description       = vault
+  description       = "vault"
 }
 
 
